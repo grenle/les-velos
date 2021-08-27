@@ -28,10 +28,13 @@ export default function App() {
   const dosage = latest ? (latest.data.inr * 2 - 4) * 5 + 20 : 0
   return (
     <ScrollView style={styles.container}>
-      
-      <Button style={{ marginVertical: 10 }} title="Nouvel INR" onPress={() => setShowModal(true)} />
+      <View style={{ marginBottom: 10 }}>
+        <Button style={{ marginVertical: 10 }} title="Nouvel INR" onPress={() => setShowModal(true)} />
+      </View>
       <Button style={{ marginVertical: 10 }} title="Logout" onPress={() => setToken(false)} />
+
       <InrModal showModal={showModal} setShowModal={setShowModal} history={history} setHistory={setHistory} />
+
 
       {token ? <Dashboard history={history} latest={latest} dosage={dosage} /> : <LogReg setUsername={setUsername} setToken={setToken} />}
 

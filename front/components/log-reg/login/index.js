@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
-import { Button, Modal, Pressable, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, Modal, Pressable, SafeAreaView, StyleSheet, Text, TextInput, View, Image } from 'react-native';
 
 import { login } from '../../../api'
+import image from './previscan.png'
 
 export default function LogReg(props){
     const { setUsername, setToken } = props
@@ -19,6 +20,7 @@ export default function LogReg(props){
         <View style={{
         borderColor: "black", borderStyle: "solid", borderWidth: 2, marginLeft: 2, marginBottom: 10, borderRadius: 10
       }}>
+          <Image source={image} style={{marginLeft: 60, marginTop: 10}}/>
         <Text style={{ fontSize: 28, fontWeight: "bold"}}>A propos</Text>
 
         <Text style={{fontSize:18 }}>
