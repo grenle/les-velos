@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import { Text, StyleSheet, View,ScrollView } from 'react-native'
 import Svg, {Rect, Line} from 'react-native-svg'
 
 const data = [ 10, 30, 1, 40, 5, 10, 8, 13, 35, 24, 2, 19, 33, 31, 13, 23, 25, 34, 14, 24, 34 ]
@@ -60,23 +60,27 @@ function Graph(props){
         console.log(`x: ${pair[0]}, pseudo height: ${pair[1]}`)
     }
     return (
-        <Svg width="100%" xmlns="http://www.w3.org/2000/svg">
+        <ScrollView>
+        <Svg width="100%" height="200" xmlns="http://www.w3.org/2000/svg">
             <Svg>
                 {xy.map((pair, i) => {
                     return <Line key={i} x1={pair[0]} x2={pair[0]} y1={pair[1]} y2="100%" stroke="darkgrey" strokeWidth="10px" />
                 })}
             </Svg>
         </Svg>
+        </ScrollView>
     )
 }
 
 
 export default function History(props){
     return (
+<ScrollView>
         <View style={styles.graphContainer}>
             <Text style={styles.title}>Historique</Text>
             <Graph data={data} />
         </View>
+        </ScrollView>
     )
 }
 

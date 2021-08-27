@@ -12,16 +12,21 @@ export default function InrModal(props) {
         setInr(2)
         setShowModal(false)
     }
-    return <Modal
+    return<Modal
       animationType="slide"
       transparent={true}
       visible={showModal}>
-      <View style={{ backgroundColor: 'white', padding: 10 }}>
+
+       
+      <ScrollView style={{ backgroundColor: 'white', padding: 10 }}>
         <Text style={{ marginVertical: 10 }}>Veuillez saisir votre INR:</Text>
         <TextInput style={styles.input} keyboardType="numeric" placeholder="ajouter votre INR" value={String(inr)} onChangeText={setInr} />
         <Button title="Enregistrer" onPress={onSave} />
-      </View>
+      </ScrollView>
+
     </Modal>
+   
+
   }
   
   const styles = StyleSheet.create({

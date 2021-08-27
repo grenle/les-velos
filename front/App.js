@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { Button, StyleSheet, View, ScrollView } from 'react-native';
+import { Button, StyleSheet, View, ScrollView, Text } from 'react-native';
+
 
 import InrModal from './components/inr-modal'
 
 import LogReg from './components/log-reg'
-import Dashboard from  './components/dashboard'
+import Dashboard from './components/dashboard'
 
 import { getUserHistory } from './api'
 
@@ -23,14 +24,21 @@ export default function App() {
     })()
   }, [token])
   const hasHistory = history && history.length
-  const latest = hasHistory ? history[history.length-1] : false
+  const latest = hasHistory ? history[history.length - 1] : false
   const dosage = latest ? (latest.data.inr * 2 - 4) * 5 + 20 : 0
   return (
     <ScrollView style={styles.container}>
+      
       <Button style={{ marginVertical: 10 }} title="Nouvel INR" onPress={() => setShowModal(true)} />
+      <Button style={{ marginVertical: 10 }} title="Logout" onPress={() => setToken(false)} />
       <InrModal showModal={showModal} setShowModal={setShowModal} history={history} setHistory={setHistory} />
+
       {token ? <Dashboard history={history} latest={latest} dosage={dosage} /> : <LogReg setUsername={setUsername} setToken={setToken} />}
+
+
+
       <StatusBar style="auto" />
+
     </ScrollView>
   );
 }

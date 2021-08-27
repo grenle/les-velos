@@ -1,11 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,ScrollView } from 'react-native';
 
 import Pills from './pills'
 
 export default function Dosage(props){
     const { latest, dosage } = props
     return (
+        <ScrollView>
         <View style={styles.box}>
             <Text style={styles.title}>Dosage Actuel</Text>
             <View style={styles.textInfo}>
@@ -14,6 +15,7 @@ export default function Dosage(props){
             </View>
             <Pills dosage={dosage} />
         </View>
+        </ScrollView>
     )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View,ScrollView } from 'react-native'
 
 import Pie from './pies'
 
@@ -10,12 +10,14 @@ export default function Pills(props) {
     const partialPie = portions % 4
     console.log(dosage, portions, fullPie, partialPie)
     return (
+        <ScrollView>
         <View style={styles.box}>
             {fullPie ? <View style={styles.pillBounds}><Pie portions={4} /></View> : null}            
             <View style={styles.pillBounds}>
                 {partialPie ? <Pie portions={partialPie} /> : null}
             </View>
         </View>
+        </ScrollView>
     )
 }
 

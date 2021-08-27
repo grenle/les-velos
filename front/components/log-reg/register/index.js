@@ -16,6 +16,7 @@ export default function LogReg(props){
         }
     }
     return (
+        
         <>
             <Text>Veuillez saisir vos informations</Text>
             <Text>Nom</Text>

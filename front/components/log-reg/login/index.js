@@ -16,6 +16,18 @@ export default function LogReg(props){
     }
     return (
         <>
+        <View style={{
+        borderColor: "black", borderStyle: "solid", borderWidth: 2, marginLeft: 2, marginBottom: 10, borderRadius: 10
+      }}>
+        <Text style={{ fontSize: 28, fontWeight: "bold"}}>A propos</Text>
+
+        <Text style={{fontSize:18 }}>
+          Vous ne parvenez pas à gérer le dosage du Préviscan ?
+          Notre application CoTCoeur est une solution innovante de calcul de celui-ci.
+          CoTCoeur a été conçu par une équipe de battantes ; nous avons le code dans le sang et il nous tient à cœur de concevoir une application, simple, fiable et efficace.
+        </Text>
+
+      </View >
             <Text>Veuillez saisir vos identifiants</Text>
             <Text>Email</Text>
             <TextInput onChangeText={setEmail} value={email} style={styles.input} keyboardType="email-address" placeholder="Email" />
