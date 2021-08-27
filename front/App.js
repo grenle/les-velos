@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { Button, StyleSheet, View, ScrollView } from 'react-native';
+import { Button, StyleSheet, View, ScrollView, SafeAreaView, Text, TextInput } from 'react-native';
 
 import InrModal from './components/inr-modal'
 
@@ -27,10 +27,16 @@ export default function App() {
   const dosage = latest ? (latest.data.inr * 2 - 4) * 5 + 20 : 0
   return (
     <ScrollView style={styles.container}>
-      <Button style={{ marginVertical: 10 }} title="Nouvel INR" onPress={() => setShowModal(true)} />
-      <InrModal showModal={showModal} setShowModal={setShowModal} history={history} setHistory={setHistory} />
-      {token ? <Dashboard history={history} latest={latest} dosage={dosage} /> : <LogReg setUsername={setUsername} setToken={setToken} />}
-      <StatusBar style="auto" />
+       <View style={{padding: 20}}>
+         <View style={{paddingTop: 10}}>
+           <Text>PROUT</Text>
+         </View>
+       <Button style={{ marginVertical: 10 }} title="Nouvel INR" onPress={() => setShowModal(true)} />
+       <Button style={{ marginVertical: 10 }} title="Logout" onPress={() => setToken(false)} />
+       <InrModal showModal={showModal} setShowModal={setShowModal} history={history} setHistory={setHistory} />
+       {token ? <Dashboard history={history} latest={latest} dosage={dosage} /> : <LogReg setUsername={setUsername} setToken={setToken} />}
+        <StatusBar style="auto" />
+      </View>
     </ScrollView>
   );
 }
@@ -43,7 +49,6 @@ const styles = StyleSheet.create({
     marginVertical: 10
   },
   container: {
-    padding: 20,
-    paddingTop: 40,
+    flex: 1,
   },
 });

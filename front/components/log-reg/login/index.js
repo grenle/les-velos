@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Button, Modal, Pressable, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, Modal, Pressable, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native'
 
 import { login } from '../../../api'
 
@@ -33,4 +33,4 @@ const styles = StyleSheet.create({
       padding: 10,
       marginVertical: 10
     },
-});  
+})

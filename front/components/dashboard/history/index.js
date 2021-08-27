@@ -60,10 +60,10 @@ function Graph(props){
         console.log(`x: ${pair[0]}, pseudo height: ${pair[1]}`)
     }
     return (
-        <Svg width="100%" xmlns="http://www.w3.org/2000/svg">
+        <Svg width="100%" height="200">
             <Svg>
                 {xy.map((pair, i) => {
-                    return <Line key={i} x1={pair[0]} x2={pair[0]} y1={pair[1]} y2="100%" stroke="darkgrey" strokeWidth="10px" />
+                    return <Line key={i} x1={pair[0]} x2={pair[0]} y1={pair[1]} y2="100%" stroke="grey" strokeWidth="10px" />
                 })}
             </Svg>
         </Svg>
@@ -72,10 +72,12 @@ function Graph(props){
 
 
 export default function History(props){
+    const { history } = props
+    console.log('history', history)
     return (
-        <View style={styles.graphContainer}>
+        <View style={styles.graphContainer} >
             <Text style={styles.title}>Historique</Text>
-            <Graph data={data} />
+            {history ? <Graph data={history.map(x => x.data.inr)} /> : null}
         </View>
     )
 }
@@ -84,9 +86,12 @@ const styles = StyleSheet.create({
     graphContainer: {
         backgroundColor: 'lightgrey',
         padding: 30,
+        marginBottom: 30,
+        flex: 1,
     },
     title: {
         fontSize: 30,
+        paddingBottom: 30,
         textAlign: 'center',
     },
 });

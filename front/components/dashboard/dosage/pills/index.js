@@ -25,9 +25,10 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         paddingVertical: 30,
+        flex: 1,
     },
     pillBounds: {
         alignItems: 'center',
-        flexGrow: 1,
+        flex: 1,
     }
 });

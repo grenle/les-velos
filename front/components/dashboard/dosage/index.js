@@ -22,9 +22,11 @@ const styles = StyleSheet.create({
         marginVertical: 30,
         backgroundColor: 'lightgrey',
         paddingVertical: 30,
+        flex: 1,
     },
     textInfo: {
-        padding: 30
+        padding: 30,
+        flex: 1,
     },
     title: {
         fontSize: 30,

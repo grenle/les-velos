@@ -12,7 +12,7 @@ const slicePaths = [
 export default function Pies(props){
     return (
         <Svg width="100" height="100" viewBox="0 0 200 200">
-            <G transform="translate(100,100) rotate(45)" stroke="#fff" strokeWidth="2">
+            <G transform="translate(100,100) rotate(45)" stroke="lightgrey" strokeWidth="8">
                 {slicePaths.slice(0, props.portions)}
             </G>
         </Svg>
