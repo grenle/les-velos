@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { Button, StyleSheet, View, ScrollView, SafeAreaView, Text, TextInput } from 'react-native';
-
+import Pies from "./components/dashboard/dosage/pills/pies"
 import InrModal from './components/inr-modal'
 
 import LogReg from './components/log-reg'
@@ -33,6 +33,8 @@ export default function App() {
          </View>
        <Button style={{ marginVertical: 10 }} title="Nouvel INR" onPress={() => setShowModal(true)} />
        <Button style={{ marginVertical: 10 }} title="Logout" onPress={() => setToken(false)} />
+        <Pies portions={2} /> 
+
        <InrModal showModal={showModal} setShowModal={setShowModal} history={history} setHistory={setHistory} />
        {token ? <Dashboard history={history} latest={latest} dosage={dosage} /> : <LogReg setUsername={setUsername} setToken={setToken} />}
         <StatusBar style="auto" />
