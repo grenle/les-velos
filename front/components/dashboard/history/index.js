@@ -70,7 +70,6 @@ function Graph(props){
     )
 }
 
-
 export default function History(props){
     const { history } = props
     console.log('history', history)

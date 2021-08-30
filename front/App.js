@@ -31,7 +31,10 @@ export default function App() {
          <View style={{paddingTop: 10}}>
            <Text>PROUT</Text>
          </View>
+       <View style={{ marginBottom: 10 }}>
+
        <Button style={{ marginVertical: 10 }} title="Nouvel INR" onPress={() => setShowModal(true)} />
+       </View>
        <Button style={{ marginVertical: 10 }} title="Logout" onPress={() => setToken(false)} />
        <InrModal showModal={showModal} setShowModal={setShowModal} history={history} setHistory={setHistory} />
        {token ? <Dashboard history={history} latest={latest} dosage={dosage} /> : <LogReg setUsername={setUsername} setToken={setToken} />}
