@@ -10,8 +10,8 @@ export default function Dosage(props){
         <View style={styles.box}>
             <Text style={styles.title}>Dosage Actuel</Text>
             <View style={styles.textInfo}>
-            {latest && <Text>Dernier INR: {latest.data.inr}</Text>}
-            {latest && <Text>Dernier dosage: {dosage}</Text>}
+            {latest && <Text style={{fontSize: 20}}>Dernier INR: {latest.data.inr}</Text>}
+            {latest && <Text style={{fontSize: 20}}>Dernier dosage: {dosage}</Text>}
             </View>
             <Pills dosage={dosage} />
         </View>

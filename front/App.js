@@ -29,16 +29,15 @@ export default function App() {
   return (
     <ScrollView style={styles.container}>
       <View style={{ marginBottom: 10 }}>
-        <Button style={{ marginVertical: 10 }} title="Nouvel INR" onPress={() => setShowModal(true)} />
+      {token ? <Button style={{ marginVertical: 10 }} title="Nouvel INR" onPress={() => setShowModal(true)} /> : null}
       </View>
-      <Button style={{ marginVertical: 10 }} title="Logout" onPress={() => setToken(false)} />
 
       <InrModal showModal={showModal} setShowModal={setShowModal} history={history} setHistory={setHistory} />
 
-
       {token ? <Dashboard history={history} latest={latest} dosage={dosage} /> : <LogReg setUsername={setUsername} setToken={setToken} />}
 
-
+      {token ? <Button title="Logout" onPress={() => setToken(false)} /> : null}
+      <View style={{height: 100}} />
 
       <StatusBar style="auto" />
 

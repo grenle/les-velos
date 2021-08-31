@@ -7,8 +7,7 @@ import History from './history'
 export default function Dashboard(props){
     const { latest, dosage } = props
     return (
-        <ScrollView>
-       
+        <ScrollView style={{marginBottom: 30}}>
             <Dosage latest={latest} dosage={dosage} />
             <History />
       

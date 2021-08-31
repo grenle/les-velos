@@ -1,6 +1,6 @@
 const api_host = 'http://localhost:8000'
 
-const ip = '10.75.2.187'
+const ip = '10.0.2.2'
 
 async function login(credentials){
     try{
